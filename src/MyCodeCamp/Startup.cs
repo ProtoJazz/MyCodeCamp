@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,11 +34,13 @@ namespace MyCodeCamp
             services.AddDbContext<CampContext>(ServiceLifetime.Scoped);
             services.AddScoped<ICampRepository, CampRepository>();
             services.AddTransient<CampDbInitializer>();
+            services.AddAutoMapper();
             // Add framework services.
             services.AddMvc().AddJsonOptions(opt =>
             {
                 opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

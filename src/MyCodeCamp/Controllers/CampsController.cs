@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyCodeCamp.Data;
 using MyCodeCamp.Data.Entities;
+using MyCodeCamp.Models;
 
 namespace MyCodeCamp
 {
@@ -15,18 +17,20 @@ namespace MyCodeCamp
     {
         private ICampRepository _repo;
         private ILogger<CampsController> _logger;
+        private IMapper _mapper;
 
-        public CampsController(ICampRepository repo, ILogger<CampsController> logger)
+        public CampsController(ICampRepository repo, ILogger<CampsController> logger, IMapper mapper)
         {
             _repo = repo;
             _logger = logger;
+            _mapper = mapper;
         }
         [HttpGet]
         public IActionResult Get()
         {
             var camps = _repo.GetAllCamps();
 
-            return Ok(camps);
+            return Ok( _mapper.Map<IEnumerable<CampModel>>(camps));
         }
         [HttpGet("{id}", Name = "CampGet")]
         public IActionResult Get(int id, bool includeSpeakers = false)
@@ -36,7 +40,7 @@ namespace MyCodeCamp
                 Camp camp = null;
                 camp = includeSpeakers ? _repo.GetCampWithSpeakers(id) : _repo.GetCamp(id);
                 if (camp == null) return NotFound($"Camp {id} was not found");
-                return Ok(camp);
+                return Ok(_mapper.Map<CampModel>(camp));
             }
             catch
             {

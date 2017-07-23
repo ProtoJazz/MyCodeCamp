@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyCodeCamp.Controllers;
 using MyCodeCamp.Data;
 using MyCodeCamp.Data.Entities;
 using MyCodeCamp.Models;
@@ -13,7 +14,7 @@ using MyCodeCamp.Models;
 namespace MyCodeCamp
 {
     [Route("api/[controller]")]
-    public class CampsController : Controller
+    public class CampsController : BaseController
     {
         private ICampRepository _repo;
         private ILogger<CampsController> _logger;
@@ -40,6 +41,8 @@ namespace MyCodeCamp
                 Camp camp = null;
                 camp = includeSpeakers ? _repo.GetCampWithSpeakers(id) : _repo.GetCamp(id);
                 if (camp == null) return NotFound($"Camp {id} was not found");
+
+                                    
                 return Ok(_mapper.Map<CampModel>(camp));
             }
             catch

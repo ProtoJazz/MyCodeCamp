@@ -10,3 +10,15 @@ C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeC
 C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.AssemblyInfo.cs
 C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.dll
 C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.pdb
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.deps.json
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.runtimeconfig.json
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.runtimeconfig.dev.json
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.dll
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.pdb
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.dll
+G:\MyCodeCamp\MyCodeCamp\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.pdb
+G:\MyCodeCamp\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.csprojResolveAssemblyReference.cache
+G:\MyCodeCamp\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.csproj.CoreCompileInputs.cache
+G:\MyCodeCamp\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.AssemblyInfo.cs
+G:\MyCodeCamp\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.dll
+G:\MyCodeCamp\MyCodeCamp\obj\Debug\netcoreapp1.0\MyCodeCamp.pdb

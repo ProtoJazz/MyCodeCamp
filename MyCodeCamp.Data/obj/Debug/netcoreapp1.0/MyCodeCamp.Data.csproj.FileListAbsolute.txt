@@ -1,0 +1,10 @@
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.deps.json
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.runtimeconfig.json
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.runtimeconfig.dev.json
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.dll
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\bin\Debug\netcoreapp1.0\MyCodeCamp.Data.pdb
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\obj\Debug\netcoreapp1.0\MyCodeCamp.Data.csprojResolveAssemblyReference.cache
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\obj\Debug\netcoreapp1.0\MyCodeCamp.Data.csproj.CoreCompileInputs.cache
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\obj\Debug\netcoreapp1.0\MyCodeCamp.Data.AssemblyInfo.cs
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\obj\Debug\netcoreapp1.0\MyCodeCamp.Data.dll
+C:\Users\Jim\Downloads\aspdotnetcore-implementing-securing-api\M05\After\MyCodeCamp.Data\obj\Debug\netcoreapp1.0\MyCodeCamp.Data.pdb

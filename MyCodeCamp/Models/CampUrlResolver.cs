@@ -11,21 +11,21 @@ using MyCodeCamp.Data.Entities;
 
 namespace MyCodeCamp.Models
 {
-  public class CampUrlResolver : IValueResolver<Camp, CampModel, string>
-  {
-    private IHttpContextAccessor _httpContextAccessor;
-
-    public CampUrlResolver(IHttpContextAccessor httpContextAccessor)
+    public class CampUrlResolver : IValueResolver<Camp, CampModel, string>
     {
-      _httpContextAccessor = httpContextAccessor;
+        private IHttpContextAccessor _httpContextAccessor;
+
+        public CampUrlResolver(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+
+        public string Resolve(Camp source, CampModel destination, string destMember, ResolutionContext context)
+        {
+            var url = (IUrlHelper)_httpContextAccessor.HttpContext.Items[BaseController.URLHELPER];
+            return url.Link("CampGet", new { moniker = source.Moniker });
+
+        }
     }
-
-
-    public string Resolve(Camp source, CampModel destination, string destMember, ResolutionContext context)
-    {
-      var url = (IUrlHelper)_httpContextAccessor.HttpContext.Items[BaseController.URLHELPER];
-      return url.Link("CampGet", new { moniker = source.Moniker });
-
-    }
-  }
 }

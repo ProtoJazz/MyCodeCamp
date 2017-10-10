@@ -64,7 +64,6 @@ namespace MyCodeCamp.Controllers
         {
             try
             {
-                if (!ModelState.IsValid) return BadRequest(ModelState);
                 _logger.LogInformation("Creating a new Code Camp");
 
                 var camp = _mapper.Map<Camp>(model);
@@ -94,7 +93,6 @@ namespace MyCodeCamp.Controllers
         {
             try
             {
-                if (!ModelState.IsValid) return BadRequest(ModelState);
                 var oldCamp = _repo.GetCampByMoniker(moniker);
                 if (oldCamp == null) return NotFound($"Could not find a camp with an moniker of {moniker}");
 

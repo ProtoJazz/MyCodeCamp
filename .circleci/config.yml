@@ -16,6 +16,6 @@ jobs:
            command: |
              if [ "${CIRCLE_BRANCH}" == "master" ]; then
                ssh-keyscan -H 138.197.138.253 >> ~/.ssh/known_hosts
-               git remote add production dokku@138.197.138.253:MyCodeCamp
+               git remote add production dokku@138.197.138.253:my-code-camp
                git push production master
              fi

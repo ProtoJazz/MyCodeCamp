@@ -1,7 +1,7 @@
 # Sample contents of Dockerfile
  # Stage 1
  FROM microsoft/aspnetcore-build AS builder
- WORKDIR /app
+ WORKDIR /MyCodeCamp
 
 
  RUN dotnet restore

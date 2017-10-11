@@ -11,9 +11,4 @@ jobs:
        - run: echo "hello world"
        - run: dotnet restore
        - run: dotnet build
-      deployment:
-        production:
-          branch: master
-            commands:
-               - git remote add production dokku@138.197.138.253:MyCodeCamp
-               - git push production master
+     

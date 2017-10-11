@@ -1,5 +1,5 @@
 FROM microsoft/aspnetcore-build:2.0 AS build-env
-WORKDIR /
+WORKDIR /MyCodeCamp
 ENV ASPNETCORE_URLS http://*:5000
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./

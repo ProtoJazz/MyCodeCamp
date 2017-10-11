@@ -1,7 +1,16 @@
-FROM microsoft/dotnet:latest
-COPY . /app
+FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
-RUN ["dotnet", "restore"]
-RUN ["dotnet", "build"]
 ENV ASPNETCORE_URLS http://*:5000
-ENTRYPOINT ["dotnet", "run", "--project", "/app/MyCodeCamp/bin/Debug/netcoreapp1.0/MyCodeCamp.dll"]
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM microsoft/aspnetcore:2.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "MyCodeCamp.dll"]

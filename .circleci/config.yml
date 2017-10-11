@@ -2,7 +2,7 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/circleci/ruby:latest
+       - image: circleci/ruby:latest
      steps:
        - checkout
        - run: echo "hello world"

@@ -12,9 +12,9 @@ jobs:
        - run: dotnet restore
        - run: dotnet build
        - deploy:
-         name: Deploy Master to Dokku
-         command: |
-           if [ "${CIRCLE_BRANCH}" == "master" ]; then
-             git remote add production dokku@138.197.138.253:MyCodeCamp
-             git push production master
-           fi
+           name: Deploy Master to Dokku
+           command: |
+             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+               git remote add production dokku@138.197.138.253:MyCodeCamp
+               git push production master
+             fi

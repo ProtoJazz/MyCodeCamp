@@ -2,7 +2,7 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/ruby:latest
+       - image: microsoft/dotnet:1.1.2-sdk-jessie
      steps:
        - checkout
        - run: echo "hello world"

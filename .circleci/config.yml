@@ -1,6 +1,6 @@
 version: 2
 jobs:
-   build:
+  build:
      docker:
        - image: microsoft/aspnetcore-build
      environment:
@@ -11,9 +11,9 @@ jobs:
        - run: echo "hello world"
        - run: dotnet restore
        - run: dotnet build
-       deployment:
-         production:
-           branch: master
-           commands:
-             - git remote add production dokku@138.197.138.253:MyCodeCamp
-             - git push production master
+  deployment:
+    production:
+      branch: master
+        commands:
+           - git remote add production dokku@138.197.138.253:MyCodeCamp
+           - git push production master

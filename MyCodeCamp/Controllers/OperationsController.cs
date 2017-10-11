@@ -21,7 +21,7 @@ namespace MyCodeCamp.Controllers
             _config = config;
         }
 
-        [HttpGet("reloadConfig")]
+        [HttpOptions("reloadConfig")]
         public IActionResult ReloadConfiguration()
         {
             try

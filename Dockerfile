@@ -2,7 +2,7 @@ FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
 ENV ASPNETCORE_URLS http://*:5000
 # Copy csproj and restore as distinct layers
-COPY *.csproj ./
+COPY */*.csproj ./
 RUN dotnet restore
 
 # Copy everything else and build

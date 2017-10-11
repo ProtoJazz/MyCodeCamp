@@ -15,7 +15,7 @@ jobs:
            name: Deploy Master to Dokku
            command: |
              if [ "${CIRCLE_BRANCH}" == "master" ]; then
-               echo 'y/JKNIa/Y83038ULg0D/byp+lw54Q3ax2mCXzL1Q9aQ' >> ~/.ssh/known_hosts
+               ssh-keyscan -H 138.197.138.253 >> ~/.ssh/known_hosts
                git remote add production dokku@138.197.138.253:MyCodeCamp
                git push production master
              fi

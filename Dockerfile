@@ -1,17 +1,16 @@
-# Sample contents of Dockerfile
- # Stage 1
- FROM microsoft/aspnetcore-build AS builder
- WORKDIR /MyCodeCamp
+ROM microsoft/aspnetcore-build:2.0 AS build-env
+WORKDIR /app
 
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
 
- RUN dotnet restore
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
 
- # copies the rest of your code
- COPY . .
- RUN dotnet publish --output /app/ --configuration Release
-
- # Stage 2
- FROM microsoft/aspnetcore
- WORKDIR /app
- COPY --from=builder /app .
- ENTRYPOINT ["dotnet", "MyCodeCamp.dll"]
+# Build runtime image
+FROM microsoft/aspnetcore:2.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "aspnetapp.dll"]

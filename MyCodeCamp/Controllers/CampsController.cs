@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,7 @@ using MyCodeCamp.Models;
 namespace MyCodeCamp.Controllers
 {
     //[EnableCors("Wildermuth")]
+    [Authorize]
     [Route("api/[controller]")]
     [ValidateModel]
     public class CampsController : BaseController

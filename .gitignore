@@ -6,3 +6,17 @@ MyCodeCamp/bin/Debug/netcoreapp1\.0/
 \.vs/MyCodeCamp/v15/
 
 MyCodeCamp/obj/Debug/netcoreapp1\.0/
+
+MyCodeCamp\.Data/bin/Debug/netcoreapp2\.0/
+
+MyCodeCamp\.Data/bin/Release/netcoreapp1\.0/
+
+MyCodeCamp\.Data/obj/Debug/netcoreapp1\.0/
+
+MyCodeCamp\.Data/obj/Debug/netcoreapp2\.0/
+
+MyCodeCamp\.Data/obj/Release/netcoreapp1\.0/
+
+MyCodeCamp\.Data/out/
+
+MyCodeCamp/out/

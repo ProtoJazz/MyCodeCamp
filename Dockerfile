@@ -1,5 +1,5 @@
 FROM microsoft/dotnet:1.0.0-core
-RUN sudo apt-get install dotnet-dev-1.0.4
+RUN apt-get update && apt-get install dotnet-dev-1.1.4
 COPY . /app
 WORKDIR /app/MyCodeCamp
 RUN ["/usr/bin/dotnet", "restore"]

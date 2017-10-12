@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk AS build-env
+FROM microsoft/dotnet:1.0.4-sdk
 COPY . /app
 WORKDIR /app/MyCodeCamp
 RUN ["dotnet", "restore"]

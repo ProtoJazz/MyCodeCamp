@@ -17,7 +17,7 @@ RUN curl -SL $DOTNET_DOWNLOAD_URL --output dotnet.tar.gz \
 
 COPY . /app
 WORKDIR /app/MyCodeCamp
-RUN ["dotnet", "restore"]
+RUN ["/usr/bin/dotnet", "restore"]
 ENV ASPNETCORE_URLS http://*:5004
 EXPOSE 5004
-ENTRYPOINT ["dotnet", "run"]
+ENTRYPOINT ["/usr/bin/dotnet", "run"]

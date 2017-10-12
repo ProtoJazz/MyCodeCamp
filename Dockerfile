@@ -1,8 +1,7 @@
-FROM microsoft/dotnet:1.0.0-core
-RUN apt-get update && apt-get install dotnet-dev-1.0.4
+FROM microsoft/dotnet:sdk AS build-env
 COPY . /app
 WORKDIR /app/MyCodeCamp
-RUN ["/usr/bin/dotnet", "restore"]
+RUN ["dotnet", "restore"]
 ENV ASPNETCORE_URLS http://*:5004
 EXPOSE 5004
-ENTRYPOINT ["/usr/bin/dotnet", "run"]
+ENTRYPOINT ["dotnet", "run"]

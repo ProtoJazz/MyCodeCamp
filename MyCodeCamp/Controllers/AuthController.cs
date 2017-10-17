@@ -68,18 +68,23 @@ namespace MyCodeCamp.Controllers
                     if (_passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password) ==
                         PasswordVerificationResult.Success)
                     {
+
+                        var userClaims = await _userManager.GetClaimsAsync(user);
                         var claims = new[]
                         {
                             new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-                        };
+                            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                            new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+                            new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
+                            new Claim(JwtRegisteredClaimNames.Email, user.Email)  
+                        }.Union(userClaims);
 
                         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
 
                         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                         var token = new JwtSecurityToken(
-                            issuer: _config["Tokens: Issuer"], 
+                            issuer: _config["Tokens:Issuer"], 
                             audience: _config["Tokens:Audience"],
                             claims: claims,
                             expires: DateTime.UtcNow.AddMinutes(15),

@@ -64,6 +64,7 @@ namespace MyCodeCamp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "SuperUsers")]
         public async Task<IActionResult> Post([FromBody]CampModel model)
         {
             try
